@@ -1,1 +1,2 @@
 Added test line to test push wiithout token
+merging with commands
