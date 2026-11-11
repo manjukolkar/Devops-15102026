@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("scm checkout"){
+            steps{
+                 git branch: 'dev' , url: 'https://github.com/manjukolkar/Devops-15102026.git'
+            }
+        }
+    }
+}
