@@ -2,9 +2,29 @@ pipeline{
     agent any
 
     stages{
-        stage("scm checkout"){
+        stage("hostname"){
             steps{
-                 git branch: 'dev' , url: 'https://github.com/manjukolkar/Devops-15102026.git'
+                sh "hostname"
+            }
+        }
+        stage("Ip address"){
+            steps{
+                sh "hostname -I"
+            }
+        }
+        stage("Cpu Details"){
+            steps{
+                sh "lscpu"
+            }
+        }
+        stage("Memory usage"){
+            steps{
+                sh "free -h"
+            }
+        }
+        stage("Disk Utilization"){
+            steps{
+                sh "df -h"
             }
         }
     }
