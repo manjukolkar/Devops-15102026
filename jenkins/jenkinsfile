@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("hostname"){
+            steps{
+                sh "hostname"
+            }
+        }
+        stage("Ip address"){
+            steps{
+                sh "hostname -I"
+            }
+        }
+        stage("CPU Details"){
+            steps{
+                sh "lscpu"
+            }
+        }
+        stage("memory usage"){
+            steps{
+                sh "free -h"
+            }
+        }
+        stage("Dist utilization"){
+            steps{
+                sh "df -h"
+            }
+        }
+    }
+   
+}
